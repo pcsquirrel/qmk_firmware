@@ -26,8 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION     test board for qmk
 
 /* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 1
+#define MATRIX_ROWS 2
+#define MATRIX_COLS 2
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
