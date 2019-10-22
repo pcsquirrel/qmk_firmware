@@ -81,6 +81,9 @@ void matrix_scan_user(void) {
 void matrix_init(void)
 {
   // initialize row and col
+	 debug_enable=true;
+	  debug_matrix=true;
+	  debug_keyboard=true;
   unselect_rows();
   init_cols();
   // initialize matrix state: all keys off
@@ -93,11 +96,16 @@ void matrix_init(void)
   LED_ON();
   wait_ms(500);
   LED_OFF();
+  print("print");
+  dprint("dprint");
+  //default_layer_state_set(0);
+
+ // switch_default_layer(0);
 
   matrix_init_quantum();
-  debug_enable=true;
-  debug_matrix=true;
-  debug_keyboard=true;
+	 debug_enable=true;
+	  debug_matrix=true;
+	  debug_keyboard=true;
   print("print2");
   dprint("dprint2");
 
