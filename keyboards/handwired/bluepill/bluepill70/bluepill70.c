@@ -1,5 +1,24 @@
 #include "bluepill70.h"
+#include "wait.h"
+#include <print.h>
 
+void matrix_init_kb(void) {
+    // put your keyboard start-up code here
+    // runs once when the firmware starts up
+
+    int i = 0;
+    print("before\n");
+    while (i < 2) {
+        palSetPad(GPIOC, 13);  // OFF Color A
+        wait_ms(250);
+        palClearPad(GPIOC, 13);  // ON Color B
+        i++;
+        wait_ms(250);
+    }
+    print("after\n");
+}
+
+/*
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
@@ -15,3 +34,4 @@ void keyboard_post_init_user(void) {
   rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 3); // sets mode to Fast breathing without saving*/
 //	set_single_persistent_default_layer(0);
 }
+*/
