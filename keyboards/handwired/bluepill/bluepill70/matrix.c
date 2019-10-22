@@ -26,6 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "util.h"
 #include "matrix.h"
 #include "wait.h"
+#include "quantum.h"
+
 
 //#include "pwm.c"
 
@@ -93,6 +95,12 @@ void matrix_init(void)
   LED_OFF();
 
   matrix_init_quantum();
+  debug_enable=true;
+  debug_matrix=true;
+  debug_keyboard=true;
+  print("print2");
+  dprint("dprint2");
+
 }
 
 uint8_t matrix_scan(void){
