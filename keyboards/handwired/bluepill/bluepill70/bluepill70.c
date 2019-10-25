@@ -16,9 +16,12 @@ void matrix_init_kb(void) {
         wait_ms(250);
     }
     print("after\n");
+    debug_enable=true;
+     debug_matrix=true;
+     debug_keyboard=true;
 }
 
-/*
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
@@ -26,12 +29,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
   return true;
 }
-
+/*
 void keyboard_post_init_user(void) {
   // Call the post init code.
-  /*rgblight_enable_noeeprom(); // enables Rgb, without saving settings
-  rgblight_sethsv_noeeprom(180, 255, 255); // sets the color to teal/cyan without saving
-  rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 3); // sets mode to Fast breathing without saving*/
+  //rgblight_enable_noeeprom(); // enables Rgb, without saving settings
+  //rgblight_sethsv_noeeprom(180, 255, 255); // sets the color to teal/cyan without saving
+  //rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 3); // sets mode to Fast breathing without saving
 //	set_single_persistent_default_layer(0);
 }
 */

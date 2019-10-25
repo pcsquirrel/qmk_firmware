@@ -174,7 +174,7 @@ static void  init_cols(void){
   palSetPadMode(GPIOB, 1, PAL_MODE_INPUT_PULLUP);
   palSetPadMode(GPIOB, 0, PAL_MODE_INPUT_PULLUP);
   palSetPadMode(GPIOA, 7, PAL_MODE_INPUT_PULLUP);
-  palSetPadMode(GPIOA, 6, PAL_MODE_INPUT_PULLUP);
+  palSetPadMode(GPIOA, 1, PAL_MODE_INPUT_PULLUP);
 }
 
 /* Returns status of switches(1:on, 0:off) */
@@ -194,7 +194,9 @@ static matrix_row_t read_cols(void){
     | ((palReadPad(GPIOB, 1)==PAL_HIGH) ? 0 : (1<<11))
     | ((palReadPad(GPIOB, 0)==PAL_HIGH) ? 0 : (1<<12))
     | ((palReadPad(GPIOA, 7)==PAL_HIGH) ? 0 : (1<<13))
-    | ((palReadPad(GPIOA, 6)==PAL_HIGH) ? 0 : (1<<14));
+    | ((palReadPad(GPIOA, 6)==PAL_HIGH) ? 0 : (1<<14))
+    | ((palReadPad(GPIOA, 1)==PAL_HIGH) ? 0 : (1<<15))
+	;
 }
 
 /* Row pin configuration
@@ -207,6 +209,8 @@ static void unselect_rows(void){
   palSetPadMode(GPIOB, 6, PAL_MODE_INPUT);
   palSetPadMode(GPIOB, 5, PAL_MODE_INPUT);
   palSetPadMode(GPIOA, 4, PAL_MODE_INPUT);
+  palSetPadMode(GPIOA, 3, PAL_MODE_INPUT);
+  palSetPadMode(GPIOA, 2, PAL_MODE_INPUT);
 }
 
 //  Modified by Xydane
@@ -236,6 +240,14 @@ static void select_row(uint8_t row){
     case 5:
       palSetPadMode(GPIOA, 4, PAL_MODE_OUTPUT_PUSHPULL);
       palClearPad(GPIOA, 4);
+      break;
+    case 6:
+      palSetPadMode(GPIOA, 3, PAL_MODE_OUTPUT_PUSHPULL);
+      palClearPad(GPIOA, 3);
+      break;
+    case 7:
+      palSetPadMode(GPIOA, 2, PAL_MODE_OUTPUT_PUSHPULL);
+      palClearPad(GPIOA, 2);
       break;
   }
 }
