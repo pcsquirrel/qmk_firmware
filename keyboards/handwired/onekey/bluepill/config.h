@@ -21,7 +21,7 @@
 #define MATRIX_COL_PINS \
     { B0, B1 }
 #define MATRIX_ROW_PINS \
-    { A7, A6 }
+    { B9,B8 }
 #define UNUSED_PINS
 
 //#define BACKLIGHT_PIN           A0
